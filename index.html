@@ -4,47 +4,40 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Social Snug | Social Media Excellence</title>
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;800&family=Outfit:wght@400;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;800&display=swap" rel="stylesheet">
     <style>
         :root {
-            --primary: #6366f1; /* Modern Indigo */
-            --secondary: #f43f5e; /* Rose accent */
-            --dark: #0f172a;
-            --light: #f8fafc;
-            --snug-bg: #ffffff;
-            --text-muted: #64748b;
+            --primary: #6c5ce7;
+            --secondary: #a29bfe;
+            --dark: #2d3436;
+            --light: #f9f9f9;
+            --accent: #fd79a8;
         }
 
         * {
             margin: 0;
             padding: 0;
             box-sizing: border-box;
+            font-family: 'Inter', sans-serif;
         }
 
         body {
-            font-family: 'Inter', sans-serif;
             background-color: var(--light);
             color: var(--dark);
             line-height: 1.6;
         }
 
-        h1, h2, h3 {
-            font-family: 'Outfit', sans-serif;
-        }
-
-        /* --- Navigation --- */
+        /* Navigation */
         nav {
             display: flex;
             justify-content: space-between;
             align-items: center;
-            padding: 2rem 10%;
-            background: rgba(255, 255, 255, 0.8);
-            backdrop-filter: blur(10px);
+            padding: 20px 10%;
+            background: white;
             position: sticky;
             top: 0;
             z-index: 1000;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.05);
         }
 
         .logo {
@@ -55,133 +48,165 @@
         }
 
         .nav-links {
-            display: flex;
             list-style: none;
-            gap: 2rem;
+            display: flex;
+        }
+
+        .nav-links li {
+            margin-left: 30px;
         }
 
         .nav-links a {
             text-decoration: none;
             color: var(--dark);
-            font-weight: 500;
-            transition: color 0.3s;
+            font-weight: 600;
+            transition: 0.3s;
         }
 
         .nav-links a:hover {
             color: var(--primary);
         }
 
-        /* --- Hero Section --- */
-        .hero {
-            padding: 8rem 10% 5rem;
+        /* Hero Section */
+        header {
+            height: 80vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
             text-align: center;
-            background: linear-gradient(135deg, #e0e7ff 0%, #ffffff 100%);
+            background: linear-gradient(135deg, #6c5ce7 0%, #a29bfe 100%);
+            color: white;
+            padding: 0 10%;
         }
 
-        .hero h1 {
+        header h1 {
             font-size: 4rem;
-            margin-bottom: 1.5rem;
-            line-height: 1.1;
+            margin-bottom: 20px;
         }
 
-        .hero p {
-            font-size: 1.25rem;
-            color: var(--text-muted);
+        header p {
+            font-size: 1.2rem;
             max-width: 600px;
-            margin: 0 auto 2rem;
+            margin-bottom: 30px;
+            opacity: 0.9;
         }
 
         .btn {
-            background-color: var(--primary);
-            color: white;
-            padding: 1rem 2rem;
-            border-radius: 50px;
+            padding: 15px 35px;
+            background: white;
+            color: var(--primary);
             text-decoration: none;
-            font-weight: 600;
-            transition: transform 0.3s, box-shadow 0.3s;
-            display: inline-block;
+            border-radius: 50px;
+            font-weight: 700;
+            transition: 0.3s;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.1);
         }
 
         .btn:hover {
             transform: translateY(-3px);
-            box-shadow: 0 10px 20px rgba(99, 102, 241, 0.3);
+            box-shadow: 0 6px 20px rgba(0,0,0,0.15);
         }
 
-        /* --- Portfolio Grid --- */
-        .portfolio {
-            padding: 5rem 10%;
+        /* Services */
+        .section {
+            padding: 80px 10%;
         }
 
         .section-title {
             text-align: center;
-            margin-bottom: 4rem;
+            margin-bottom: 50px;
         }
 
         .section-title h2 {
             font-size: 2.5rem;
+            color: var(--primary);
         }
 
-        .grid {
+        .services-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 2rem;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 30px;
         }
 
-        .card {
-            background: var(--snug-bg);
+        .service-card {
+            background: white;
+            padding: 40px;
             border-radius: 20px;
-            overflow: hidden;
-            box-shadow: 0 4px 6px -1px rgba(0,0,0,0.1);
-            transition: transform 0.3s;
+            text-align: center;
+            transition: 0.3s;
+            border: 1px solid #eee;
         }
 
-        .card:hover {
+        .service-card:hover {
+            border-color: var(--primary);
             transform: translateY(-10px);
         }
 
-        .card-img {
-            height: 250px;
-            background-color: #ddd;
-            background-size: cover;
-            background-position: center;
+        .service-card i {
+            font-size: 2rem;
+            color: var(--accent);
+            margin-bottom: 20px;
         }
 
-        .card-content {
-            padding: 1.5rem;
+        /* Portfolio */
+        .portfolio-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 20px;
         }
 
-        .card-content h3 {
-            margin-bottom: 0.5rem;
+        .portfolio-item {
+            height: 300px;
+            background: #ddd;
+            border-radius: 15px;
+            overflow: hidden;
+            position: relative;
         }
 
-        .card-tag {
-            font-size: 0.8rem;
-            text-transform: uppercase;
-            color: var(--primary);
-            letter-spacing: 1px;
-            font-weight: 700;
+        .portfolio-item img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
         }
 
-        /* --- Footer --- */
-        footer {
-            background-color: var(--dark);
+        .overlay {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            background: linear-gradient(transparent, rgba(0,0,0,0.8));
             color: white;
-            padding: 4rem 10%;
+            padding: 20px;
+            opacity: 0;
+            transition: 0.3s;
+        }
+
+        .portfolio-item:hover .overlay {
+            opacity: 1;
+        }
+
+        /* Footer */
+        footer {
+            background: var(--dark);
+            color: white;
             text-align: center;
+            padding: 50px 10%;
         }
 
-        .footer-links {
-            margin: 2rem 0;
+        footer p {
+            margin-bottom: 10px;
+            opacity: 0.7;
         }
 
-        .footer-links a {
-            color: #94a3b8;
-            margin: 0 1rem;
+        .footer-url {
+            color: var(--secondary);
             text-decoration: none;
+            font-weight: bold;
         }
 
         @media (max-width: 768px) {
-            .hero h1 { font-size: 2.5rem; }
+            header h1 { font-size: 2.5rem; }
             .nav-links { display: none; }
         }
     </style>
@@ -191,64 +216,71 @@
     <nav>
         <a href="#" class="logo">Social Snug</a>
         <ul class="nav-links">
-            <li><a href="#work">Work</a></li>
             <li><a href="#services">Services</a></li>
-            <li><a href="http://socialsnug.net">Visit Main Site</a></li>
+            <li><a href="#portfolio">Portfolio</a></li>
+            <li><a href="mailto:hello@socialsnug.net">Contact</a></li>
         </ul>
-        <a href="mailto:hello@socialsnug.net" class="btn" style="padding: 0.6rem 1.2rem;">Let's Talk</a>
     </nav>
 
-    <header class="hero">
-        <h1>Making Social Media Feel Like Home.</h1>
-        <p>We build community-driven strategies for brands that want to connect, not just broadcast.</p>
-        <a href="#work" class="btn">View Our Work</a>
+    <header>
+        <h1>Connect. Engage. Grow.</h1>
+        <p>At Social Snug, we make your brand feel right at home in the digital world. Professional social media management tailored for your success.</p>
+        <a href="#portfolio" class="btn">View Our Work</a>
     </header>
 
-    <section class="portfolio" id="work">
+    <section id="services" class="section">
         <div class="section-title">
-            <p style="color: var(--primary); font-weight: bold;">PORTFOLIO</p>
-            <h2>Selected Works</h2>
+            <h2>Our Expertise</h2>
+            <p>We handle the noise, you enjoy the results.</p>
         </div>
+        <div class="services-grid">
+            <div class="service-card">
+                <h3>Strategy</h3>
+                <p>Data-driven roadmaps to reach your target audience effectively.</p>
+            </div>
+            <div class="service-card">
+                <h3>Content Creation</h3>
+                <p>Stunning visuals and copy that stop the scroll and spark joy.</p>
+            </div>
+            <div class="service-card">
+                <h3>Engagement</h3>
+                <p>Real-time community management to keep your fans happy.</p>
+            </div>
+        </div>
+    </section>
 
-        <div class="grid">
-            <div class="card">
-                <div class="card-img" style="background-image: url('https://images.unsplash.com/photo-1557804506-669a67965ba0?auto=format&fit=crop&q=80&w=800');"></div>
-                <div class="card-content">
-                    <span class="card-tag">Branding • Instagram</span>
-                    <h3>The Urban Oasis</h3>
-                    <p>Increased organic reach by 140% through aesthetic storytelling and community engagement.</p>
+    <section id="portfolio" class="section" style="background: #f0f2f5;">
+        <div class="section-title">
+            <h2>Recent Projects</h2>
+        </div>
+        <div class="portfolio-grid">
+            <div class="portfolio-item">
+                <div style="background: #a29bfe; width:100%; height:100%; display:flex; align-items:center; justify-content:center; color:white;">Lifestyle Brand Campaign</div>
+                <div class="overlay">
+                    <h4>Aura Yoga</h4>
+                    <p>+45% Organic Growth</p>
                 </div>
             </div>
-
-            <div class="card">
-                <div class="card-img" style="background-image: url('https://images.unsplash.com/photo-1460925895917-afdab827c52f?auto=format&fit=crop&q=80&w=800');"></div>
-                <div class="card-content">
-                    <span class="card-tag">Growth • LinkedIn</span>
-                    <h3>TechStream SaaS</h3>
-                    <p>Established thought leadership for C-suite executives, resulting in 50+ high-ticket leads.</p>
+            <div class="portfolio-item">
+                <div style="background: #fd79a8; width:100%; height:100%; display:flex; align-items:center; justify-content:center; color:white;">Tech Startup Launch</div>
+                <div class="overlay">
+                    <h4>CloudFlow</h4>
+                    <p>Viral Twitter Strategy</p>
                 </div>
             </div>
-
-            <div class="card">
-                <div class="card-img" style="background-image: url('https://images.unsplash.com/photo-1511512578047-dfb367046420?auto=format&fit=crop&q=80&w=800');"></div>
-                <div class="card-content">
-                    <span class="card-tag">Content • TikTok</span>
-                    <h3>Glow & Go Skincare</h3>
-                    <p>Viral campaign management that drove 20k new followers in under 30 days.</p>
+            <div class="portfolio-item">
+                <div style="background: #55efc4; width:100%; height:100%; display:flex; align-items:center; justify-content:center; color:white;">Food & Bev Content</div>
+                <div class="overlay">
+                    <h4>Bite Me Bakery</h4>
+                    <p>Content & Photography</p>
                 </div>
             </div>
         </div>
     </section>
 
     <footer>
-        <h2>Social Snug</h2>
-        <p>Helping brands thrive in the digital ecosystem.</p>
-        <div class="footer-links">
-            <a href="#">Instagram</a>
-            <a href="#">LinkedIn</a>
-            <a href="#">Twitter</a>
-        </div>
-        <p style="font-size: 0.8rem; color: #64748b;">&copy; 2025 Social Snug. All rights reserved. | socialsnug.net</p>
+        <p>&copy; 2023 Social Snug. All rights reserved.</p>
+        <a href="https://socialsnug.net" class="footer-url">socialsnug.net</a>
     </footer>
 
 </body>
