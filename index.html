@@ -43,13 +43,14 @@
         }
 
         .logo {
-            font-size: 1.5rem;
-            font-weight: 800;
-            color: var(--primary-color);
-            text-decoration: none;
             display: flex;
             align-items: center;
-            gap: 10px;
+            text-decoration: none;
+        }
+
+        .logo img {
+            max-height: 50px; /* Adjust size as needed */
+            width: auto;
         }
 
         .nav-links {
@@ -236,6 +237,10 @@
             color: var(--text-muted);
         }
 
+        .footer-brand .logo {
+            display: inline-block;
+        }
+
         .social-icons {
             display: flex;
             gap: 1rem;
@@ -273,7 +278,7 @@
 
     <nav>
         <a href="#" class="logo">
-            <i class="fas fa-couch"></i> Social Snug
+            <img src="image_0.png" alt="Social Snug Logo">
         </a>
         <ul class="nav-links">
             <li><a href="#features">Features</a></li>
@@ -363,7 +368,9 @@
     <footer>
         <div class="footer-content">
             <div class="footer-brand">
-                <a href="#" class="logo"><i class="fas fa-couch"></i> Social Snug</a>
+                <a href="#" class="logo">
+                    <img src="image_0.png" alt="Social Snug Logo" style="max-height: 40px;">
+                </a>
                 <p>Bringing the world closer together through empowered communities.</p>
                 <div class="social-icons">
                     <a href="#"><i class="fab fa-facebook-f"></i></a>
